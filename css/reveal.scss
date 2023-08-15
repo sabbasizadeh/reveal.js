@@ -601,7 +601,7 @@ $controlsArrowAngleActive: 36deg;
 	bottom: 8px;
 	z-index: 31;
 	font-family: Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 24px;
 	line-height: 1;
 	color: #fff;
 	background-color: rgba( 0, 0, 0, 0.4 );
@@ -646,7 +646,7 @@ $controlsArrowAngleActive: 36deg;
 
 	overflow: visible;
 	z-index: 1;
-	text-align: center;
+	text-align: left;
 	perspective: 600px;
 	perspective-origin: 50% 40%;
 }
