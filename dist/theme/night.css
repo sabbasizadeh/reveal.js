@@ -356,3 +356,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
     background-color: var(--r-background-color);
   }
 }
+/*********************************************
+ * MANUALLY ADDED
+ *********************************************/
+.reveal .banner {
+  background: var(--r-link-color);
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 15px;
+}

@@ -36,6 +36,7 @@
 					}
 					.col{
 						flex: 1;
+						align-items: right;
 					}
 					.text{
 						width: 100%;
@@ -43,7 +44,7 @@
 				</style>
 
 				<style>
-					.imgcontainer {
+					.logocontainer {
 						display: grid;
 						align-items: center; 
 						grid-template-columns: 60px 250px;
@@ -57,6 +58,23 @@
 					
 					.text {
 						font-size: 21px;
+					}
+				</style>
+
+				<style>
+					.imgcolumn {
+						display: grid;
+						align-items: center; 
+						grid-template-columns: 1fr 450px;
+						column-gap: 5px;
+					}
+					
+					.textcolumn {
+						max-height:100%;
+					}
+					
+					img {
+						/* max-width: 100%; */
 					}
 				</style>
 
@@ -76,7 +94,7 @@
 							Summer 2023 - EPFL
 						</div>
 						<div class="col">
-							<div style="margin-left:100px;" class="imgcontainer">
+							<div style="margin-left:100px;" class="logocontainer">
 								<img data-src="images/uoft-cropped.png" width="60">
 								<div class="text">University of Toronto</div>
 							</div>
@@ -84,7 +102,7 @@
 								<div class="col"> -->
 							<!-- <br> -->
 							<!-- <div class="text"> test</div> -->
-							<div style="margin-left:100px;" class="imgcontainer">
+							<div style="margin-left:100px;" class="logocontainer">
 								<img  data-src="images/huawei-cropped.png" width="60">
 								<div class="text">Huawei Canada</div>
 							</div>
@@ -92,43 +110,44 @@
 					</div>
 				</section>
 
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+				<section>
 					<h2>Data Center Networks</h2>
-					<div class="r-stack" style="margin-top:200px;"> 
-						<img class="fragment shrink" data-fragment-index="0" src="images/flickity_display_Facebook-Fort-Worth-Aerial-View.png" height="550">
-						<img class="fragment fade-in-then-out current-visible" data-fragment-index="0" src="images/flickity_display_Facebook-Forest-City-Data-Hall-Full-of-Open-Compute-Cabinets.jpg" height="550">
-						<img data-id="b1" class="fragment fade-in-then-out" src="images/flickity_display_Facebook-Fort-Worth-Structured-Cabling-and-Cabinets-on-FB-s-Fort-Worth-Campus.jpg" height="550">
-					</div>
-				</section>
-
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
-					<h2>Data Center Communications</h2>
-					<div class="container">
-						<div class="col">
-							<h3 data-id="dir1" class="fragment"> Route Management </h3>
-							<ul class="fragment">
-								<li>Maintain isolation</li>
-								<li>Follow SLAs</li>
-								<li>Support <span style="color: blue;">migration</span> of virtual entities</li>
-							</ul>
-							<h3 data-id="dir2" class="fragment" style="margin-top: 70px;"> Rate Management </h3>
-							<ul class="fragment">
-								<li>Minimize collisions</li>
-								<li>Maximize utilization</li>
-								<li>Ensure fair <span style="color: blue;">transportation</span></li>
+					<div class="imgcolumn">
+						<div class="textcolumn">
+							<ul>
+								<li class="fragment" data-fragment-index="0"> Extreme increasing demand for computing</li>
+							<ul>
+								<li class="fragment" data-fragment-index="1"> Cloud computing </li>
+								<li class="fragment" data-fragment-index="2"> AI/ML models</li>
+								<li class="fragment" data-fragment-index="3"> LLM/Transformers [1]</li>
 							</ul>
 						</div>
-						<img data-id="b1" src="images/flickity_display_Facebook-Fort-Worth-Structured-Cabling-and-Cabinets-on-FB-s-Fort-Worth-Campus.jpg" height="350">
+						<img class="fragment" data-fragment-index="3" src="images/Transformers-Model-Sizes-Increasing-Exponentially-with-Many-Different-Use-Cases.jpg" width="800px">
+					</div>
+					
+					<h4 class="fragment" data-fragment-index="4">Network Challenges</h4>
+					<div class="imgcolumn">
+						<div class="textcolumn">
+							<ul>
+								<li class="fragment" data-fragment-index="5"> Management at Scale </li>
+								<ul class="fragment" data-fragment-index="6">
+									<li> Migration </li>
+									<li> Overlay Networks</li>
+								</ul>
+								<li class="fragment" data-fragment-index="7"> Congestion</li>
+								<li class="fragment" data-fragment-index="8"> First-RTT Dilemma [2]</li>
+							</ul>
+						</div>
+						<img class="fragment" data-fragment-index="8" src="images/first-rtt.png" width="800px">
 					</div>
 				</section>
 
-				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+				<section>
 					<div class="container">
 						<div class="col">
-							<h3 data-id="dir1"> Route Management </h3>
-							<p>Focus: Migration</p>
+							<h3 data-id="dir1"> Migration </h3>
 							<ol style="margin-left: 100px; margin-top: 60px;">
-								<li>Protocol design</li>
+								<li>Protocol enhancement</li>
 								<li>Batch scheduling</li>
 								<li>Cut the tail latency</li>
 								<li>Migrate a sub-network</li>
@@ -137,8 +156,7 @@
 					<!-- <hr><hr><hr><hr><hr>
 					<hr style="margin-right: 50px;"> -->
 						<div class="col">
-							<h3 data-id="dir2"> Rate Management </h3>
-							<p class="fragment">Focus: Transport Layer </p>
+							<h3 data-id="dir2"> Transport </h3>
 							<ol class="fragment" style="margin-left: 100px; margin-top: 60px;">
 								<li>Scout: A novel congestion signal</li>
 								<li>A Scout-Based Congestion Control</li>
@@ -151,145 +169,150 @@
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<p style="color: white; margin-top: 400px;" class="r-fit-text">MIGRATION</p>
 				</section>
-				
-				<section>
-					<h2>Virtualization and Packet Switching</h2>
-					<img data-src="images/hypervisor2.png" width="600">
-					<p class="fragment"> Combination of these vSwitches forms a <span style="color: blue;"> <b>distributed control plane.</b></span></p>
+
+				<section data-auto-animate>
+					<h2>Load Migration</h2>
+					<h4 style="margin-top: 40px;"> Reasons</h4>
+					<ul>
+						<li class="fragment"> Change in the demand</li>
+						<li class="fragment"> SW/HW maintenance</li>
+						<li class="fragment"> Isolation and Monitoring</li>
+						<li class="fragment"> Disaster prevention</li>
+					</ul>
+					<h4 class="fragment" style="margin-top: 40px;"> Granularities</h4>
+					<ul>
+						<li data-id="d1" class="fragment"> Control Path</li>
+						<ul>
+							<li class="fragment"> Controller load migration </li>
+						</ul>
+						
+						<li class="fragment"> Data Path</li>
+						<ul>
+							<li class="fragment"> VM/Container</li>
+							<li class="fragment"> Application</li>
+							<li class="fragment"> Tenant</li>
+							<li data-id="d2" class="fragment"> Any virtual sub-network</li>
+						</ul>
+					</ul>					
 				</section>
-				
+
+
+				<section data-auto-animate>
+					<h2>Migration</h2>
+					<h4 style="margin-top: 40px;"> Reasons</h4>
+					<ul>
+						<li> Change in the demand</li>
+						<li> SW/HW maintenance</li>
+						<li> Isolation and Monitoring</li>
+						<li> Disaster prevention</li>
+					</ul>
+					<h4 style="margin-top: 40px;"> Granularities</h4>
+					<ul>
+						<li> Control Path</li>
+						<ul>
+							<li data-id="d1" style="color: blue;"> Controller load migration </li>
+						</ul>
+						
+						<li> Data Path</li>
+						<ul>
+							<li> VM/Container</li>
+							<li> Application</li>
+							<li> Tenant</li>
+							<li data-id="d2" style="color: blue;"> Any virtual sub-network</li>
+						</ul>
+					</ul>					
+				</section>
+
 
 				<section>
 					<h2>Load Migration</h2>
-					<ul>
-						<li class="fragment"> Network load fluctuates</li>
-						<li class="fragment"> So load on the end hosts (hypervisors) </li>
-						<ul>
-							<li class="fragment"> Results in longer response time</li>
-							<li class="fragment"> And slower data path</li>
-						</ul>
-					</ul>
-					<div style="margin-top: 100px; border: 2px solid red; border-radius: 25px;" class="fragment">
-						This can be mitigated via load migration.
-					</div>	
-					<div style="margin-top: 100px; border: 2px solid red; border-radius: 25px;" class="fragment">
-						Therefore, network controllers should also be migrated.
-					</div>						
-				</section>
-
-				
-				<section>
-					<h2>Migration Consistency</h2>
-					<ul>
-						<li class="fragment"> Network consistency matters!</li>
-						<li class="fragment"> Under CAP theorem, one of the following cannot be satisfied: </li>
-						<ul>
-							<li class="fragment"> Consistency</li>
-							<li class="fragment"> Availability</li>
-							<li class="fragment"> Partitioning</li>
-						</ul>
-					</ul>
-					<div style="margin-top: 100px; border: 2px solid red; border-radius: 25px;" class="fragment">
-						As a result, any consistent migration protocol has a <span style="color: blue;">blackout time</span>.
-					</div>	
-					<div style="margin-top: 100px; border: 2px solid red; border-radius: 25px;" class="fragment">
-						 As the total migration time is relatively small, we provide a buffering mechanism to bring back the availablity.
-					</div>
-					<div style="margin-top: 100px; border: 2px solid red; border-radius: 25px;" class="fragment">
-						The main problem reduces to cutting the blackout time of a migration.
-					</div>						
-				</section>
-
-				<section>
-					<h2>Protocol Enhancement</h2>
-					<div class="r-stack" style="margin-top:200px;"> 
-						<img class="fragment fade-out" data-fragment-index="0" src="images/4phase.png" height="550">
-						<img class="fragment fade-in-then-out" data-fragment-index="0" src="images/3phase.png" height="550">
-					</div>
-				</section>
-
-				<section>
-					<h2>Protocol Enhancement</h2>
-					<div style="margin-top:75px;"> 
-						<img  src="images/erc-phases.png" height="550">
-					</div>
-					<div class="fragment">
-						<ul>
-							<li>23-50% migration speedup</li>
-							<li>Efficient</li>
-							<li>Resilient</li>
-							<li>Consistent</li>
-						</ul>
-					</div>
-				</section>
-
-				<section>
-					<h2>Batch Scheduling</h2>
-					<img src="images/scheduling.png" height="600">
-				</section>
-
-				<section>
-					<h2>Batch Scheduling</h2>
-					<img src="images/sched-heuristic.png" height="600">
-				</section>
-
-				<section>
-					<h2>Batch Scheduling</h2>
-					<img style="margin-left: 250px;" src="images/batch.png" height="600">
-					<ul>
-						<li class="fragment"># of migrations ↑  → time of ILP (OPT) grows exponentially </li>
-						<li class="fragment">In many experiments ILP did not finish in a 10 day timeout period</li>
-						<li class="fragment">Both VFF and CBF finish in a few milliseconds</li>
-						<li class="fragment">In certain scenarios, CBF was only off from OPT by 1 round</li>
-					</ul>
+					<div class="container">
+						<div class="col">
+							<h4>From 4-Phase to 3-Phase protocols</h4>
+						</div>
+						<div class="col">	
+							<div class="r-stack"> 
+								<img class="fragment current-visible" data-fragment-index="0" src="images/4phase.png" height="360">
+								<img class="fragment current-visible" data-fragment-index="1" src="images/3phase.png" height="360">
+								<div class="fragment banner current-visible">
+									23-50% migration speedup
+								</div>
+								<div class="r-stack fragment">
+									<img src="images/poster-3phase.png" height="160">
+									<img style="margin-top: 160px; margin-left: 20px;" src="images/paper-3phase.png" height="120">
+								</div>
+							</div>
+						</div>
+					</div>			
 							
-				</section>
-
-				
-				<section data-auto-animate>
-					<h2>Live Stateful Sub-Network Migration</h2>
-					<img style="margin-left: 150px;" src="images/subnet.png" height="500">
-					<ul>
-						<li class="fragment">Per-connection consistency</li>
-						<li class="fragment">In-order packet delivery</li>
-						<li class="fragment">VNF policy enforcement</li>
-						<li class="fragment">Failure tolerance</li>
-					</ul>
-							
-				</section>
-				
-				<section data-auto-animate>
-					<h2>Live Stateful Sub-Network Migration</h2>
-					<div class="r-stack" style="margin-top:200px;"> 
-						<img class="fragment fade-out" data-fragment-index="0" src="images/sub-mig.png" height="550">
-						<img class="fragment fade-in-then-out" data-fragment-index="0" src="images/qanat-background.png" height="550">
+					<div class="container">
+						<div class="col">
+							<h4 class="fragment">Batch Scheduling</h4>
+						</div>
+						<div class="col">	
+							<div class="r-stack"> 
+								<img class="fragment current-visible" src="images/batch.png" height="360">
+								<div class="fragment banner current-visible">
+									<ul>
+										<li>Outperforms ILP</li>
+										<li>Theoretical guarantees</li>
+									</ul>
+								</div>
+								<div class="fragment fade-down">
+									<img src="images/poster-sched.png" height="160">
+									<img src="images/paper-sched.png" height="160">
+								</div>
+							</div>
+						</div>
 					</div>	
 				</section>
 
+				
 				<section>
-					<h2>Meta Migration</h2>
-					<div class="r-stack" style="margin-top:200px;"> 
-						<img class="fragment fade-out" data-fragment-index="0" src="images/mig-pool.png" height="350">
-						<img class="fragment fade-in-then-out current-visible" data-fragment-index="0" src="images/probe.png" height="350">
-						<img class="fragment fade-out current-visible" src="images/2probes.png" height="350">
-					</div>
-				</section>
-
-				<section>
-					<h2>Meta Migration</h2>
-					<ul>
-						<li>Run the protocol toward all candidates</li>
-						<li>First to reach committing point is the winner</li>
-						<li>Roll back migration for others</li>
-						<li>Finalize for the successful candidate</li>
-					</ul>					
-					<div class="r-stack" style="margin-top:200px;"> 
-						<img class="fragment current-visible" data-fragment-index="0" src="images/single-meta.png" height="350">
-						<img class="fragment fade-out current-visible" data-fragment-index="0" src="images/meta1.png" height="350">
-						<img class="fragment fade-out current-visible" data-fragment-index="0" src="images/meta2.png" height="350">
-						<img class="fragment fade-out current-visible" data-fragment-index="0" src="images/meta3.png" height="350">
-						<img class="fragment fade-out current-visible" src="images/meta4.png" height="350">
-					</div>
+					<h2>Load Migration</h2>
+					<div class="container">
+						<div class="col">
+							<h4>Meta-Migration</h4>
+						</div>
+						<div class="col">	
+							<div class="r-stack"> 
+								<img class="fragment current-visible" src="images/mig-pool.png" height="200">
+								<img class="fragment current-visible" src="images/single-meta.png" height="360">
+								<img class="fragment current-visible" src="images/meta2.png" height="360">
+								<div class="fragment banner current-visible">
+									<ul>
+										<li>Up to 53% migration speedup</li>
+										<li>Results matching our theorems </li>
+									</ul>
+								</div>
+								<div class="fragment fade-down">
+									<img src="images/paper-meta.png" height="160">
+								</div>
+							</div>
+						</div>
+					</div>			
+							
+					<div class="container">
+						<div class="col">
+							<h4 class="fragment">Live Stateful Sub-Network Migration</h4>
+						</div>
+						<div class="col">	
+							<div class="r-stack"> 
+								<img class="fragment current-visible" src="images/subnet.png" height="260">
+								<img class="fragment current-visible" src="images/qanat-background.png" height="300">
+								<div class="fragment banner current-visible">
+									<ul>
+										<li>Per-connection consistency</li>
+										<li>In-order packet delivery</li>
+										<li>VNF policy enforcement</li>
+										<li>Failure tolerance</li>
+									</ul>
+								</div>
+								<img class="fragment" src="images/paper-qanat.png" height="120">
+								<img class="fragment" src="images/patent.png" height="160">
+							</div>
+						</div>
+					</div>	
 				</section>
 
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
@@ -297,25 +320,29 @@
 				</section>
 
 				<section>
-					<h2>Congestion</h2>
+					<h2>Congestion Control (CC)</h2>
 					<ul>
-						<li class="fragment">Applications demand network bandwidth</li>
-						<li class="fragment">Overshooting results in drop</li>
-						<li class="fragment">Underutilization is wasteful</li>
-						<li class="fragment">The sending rate should be adjusted</li>
-						<li class="fragment">End hosts make these decisions based on signals</li>
+						<li class="fragment" data-fragment-index="0">Applications demand network bandwidth</li>
+						<li class="fragment" data-fragment-index="1">Overshooting results in drop</li>
+						<li class="fragment" data-fragment-index="2">Underutilization increases FCT</li>
+						<li class="fragment" data-fragment-index="3">The sending rate should be adjusted</li>
+						<li class="fragment" data-fragment-index="4">End hosts make these decisions based on signals</li>
 					</ul>	
-
-					<div class="fragment" style="margin-top: 80px;">
-						<h3>Congestion signals</h3>
+					<div style="margin-top: 100px;" class="container">
+						<div class="col">
+							<div class="fragment" data-fragment-index="5">
+								<h3>Congestion signals</h3>
+							</div>
+							<!-- <ul class="fragment data-fragment-reset" data-fragment-index="7" style="margin-top: 40px;">
+								<li>Packet Loss</li>
+								<li>RTT Delay Measurement</li>
+								<li>Explicit Congestion Notification (ECN)</li>
+								<li>In-band Network Telemetry (INT)</li>
+								<li style="color: blue;">Scout</li>
+							</ul>	 -->
+							<img style="margin-top: 100px; margin-left: 280px;" class="fragment" data-fragment-index="6" src="images/signal-timeliness.png" height="260">
+						</div>
 					</div>
-					<ul style="margin-top: 40px;">
-						<li class="fragment">Packet Drop</li>
-						<li class="fragment">RTT Delay Measurement</li>
-						<li class="fragment">Explicit Congestion Notification (ECN)</li>
-						<li class="fragment">In-band Network Telemetry (INT)</li>
-						<li class="fragment" style="color: blue;">Scout</li>
-					</ul>	
 				</section>
 
 				<section>
@@ -330,27 +357,171 @@
 
 				<section>
 					<h2>DCN Scout-Based Congestion Control</h2>
-					<img style="margin-left: 300px;" src="images/scout-arch.png" width="700">
+					<img style="margin-left: 300px;" src="images/scout-arch.png" width="600">
 					
 					<div class="fragment">
 						<h3>Implementation Challenges</h3>
 					</div>
 					<ul style="margin-top: 20px;">
-						<li class="fragment">Linux TCP is complicated</li>
-						<li class="fragment">Transparency: Application-layer sockets should remain intact</li>
-						<li class="fragment">Short-RTT DCN: User-level applications have high context switching overhead</li>
-						<li class="fragment">ECMP routing: Out-of-band probes should integrate with TCP socket</li>
-						<li class="fragment">Maintenance at scale: Kernel code should not be touched!</li>
+						<li class="fragment">Following operations are complicated under Linux TCP stack
+							<ul>
+								<li>High frequency packet generation</li>
+								<li>IP Priority marking per packet</li>
+							</ul>
+						</li>
+						<li class="fragment"><b>Maintenance at scale</b>: Kernel code should not be touched!</li>
+						<li class="fragment"><b>Transparency</b>: Application-layer sockets should remain intact</li>
+						<li class="fragment"><b>Short-RTT DCN</b>: User-level applications have high context switching overhead</li>
+						<!-- <li class="fragment">ECMP routing: Out-of-band probes should integrate with TCP socket</li> -->
 					</ul>
-					<div style="margin-top: 50px; border: 2px solid red; border-radius: 25px;" class="fragment">
+					<!-- <div style="margin-top: 50px; border: 2px solid red; border-radius: 25px;" class="fragment">
 						<span style="color: blue;">eBPF</span> is the solution.
-					</div>	
+					</div>	 -->
+					<div class="banner fragment" style="margin-top: 50px;">
+						eBPF is the solution!
+					</div>
+				</section>
+
+				<section>
+					<h2>eBPF for Scout</h2>
+					<div class="container">
+						<div class="col">
+							<h4 style="margin-top: 20px;">Receiver-side:</h4>
+							<ul>
+								<li class="fragment">eBPF TC layer reflects the Scout (ACK)</li>
+							</ul>
+						</div>
+						<div class="col">
+							<img style="margin-left: 300px;" src="images/scout-arch.png" width="350">
+						</div>
+					</div>
+					<h4 class="fragment" style="margin-top: 5px;">Sender-side:</h4>
+					<ul>
+						<li class="fragment">eBPF TC layer periodically clones packets from connections</li>
+						<li class="fragment">Demotes the cloned packet's priority</li>
+						<li class="fragment">Mark the packet as Scout* and send it over wire</li>
+						<li class="fragment">On each Scout ACK, updates the RTT of Scouts in an <span style="color: blue;">eBPF maps</span></li>
+						<li class="fragment">Finally, eBPF cong-ops layer reuses map states</li>
+					</ul>
+					<div class="banner fragment" style="margin-top: -100px; margin-left: 300px">
+						<ul>
+							<li>Packet generation</li>
+							<li>Packet marking</li>
+							<li>Transparent to the applications</li>
+							<li>Avoids any user-level logic</li>
+							<li>Not touching the kernel</li>
+						</ul>
+					</div>
+						
+					
 				</section>
 
 				<section>
 					<h2>DCN Scout-Based Results</h2>
 					<img style="margin-left: 200px;" src="images/scout-res.png" width="1000">
 					<img style="margin-left: 400px;" src="images/scout-deviation.png" width="600">
+				</section>
+
+				<section>
+					<h2>Augmenting TCP/IP Stack</h2>
+					<h4 style="margin-top: 90px;" class="fragment">TCP/IP Stack Limitations</h4>
+					<ul>
+						<li class="fragment">Lack of complete network observability</li>
+						<ul>
+							<li class="fragment">Per flow CC</li>
+						</ul>
+						<li class="fragment">Not flexible enough</li>
+						<ul>
+							<li class="fragment">Per socket manipulation</li>
+							<li class="fragment">Per path manipulation</li>
+							<li class="fragment">Lack of per-packet manipulation interface</li>
+						</ul>
+						<li class="fragment">Less clarity regarding the rule enforcement delay</li>
+					</ul>	
+					
+				</section>
+				
+				<section>
+					<h2>Augmenter</h2>
+					<h4 style="margin-top: 90px;" class="fragment" data-fragment-index="0">Key Idea</h4>
+					<p style="margin-left: 90px;" class="fragment" data-fragment-index="0">unify the management and control of underlying flows</p>	
+					<ul>
+						<li class="fragment">Gather states</li>
+						<li class="fragment">Aggregate those</li>
+						<li class="fragment">Control existing and incoming flows</li>
+					</ul>
+					<br>
+					<div class="banner fragment" style="margin-top: 50px; margin-left: 300px;">
+						Towards a solution for first-RTT dilemma and incast
+					</div>					
+				</section>
+
+				
+				<section>
+					<h2>Augmenter for setting IW</h2>
+					<!-- <h4 style="margin-top: 90px;" class="fragment">User-Level</h4>
+					<p style="margin-left: 90px;" class="fragment">unify the management and control of underlying flows</p> -->
+					
+					<ul>
+						<li class="fragment">Initial Window (IW) defines the initial sending rate</li>
+						<li class="fragment">Collect the congestion window (cwnd) values of the flows as they finish</li>
+						<li class="fragment">Aggregate based on the path</li>
+						<li class="fragment">Take a per path average and use that for IW of the path</li>
+					</ul>
+					<img class="fragment" style="margin-left: 400px;" src="images/iw.png" width="600">					
+				</section>
+
+				<section>
+					<h2>Leveraging eBPF for Augmenter</h2>
+					<h4 style="margin-top: 90px;" class="fragment" data-fragment-index="0">Kernel-Level State Binding</h4>
+					<ul>
+						<li class="fragment">Binding per path</li>
+						<li class="fragment">Binding per layers</li>
+					</ul>
+					<div class="banner fragment fade-in-then-out" style="margin-top: 50px; margin-left: 300px;">
+						eBPF Maps are the main enablers for state binding
+					</div>			
+					<h4 style="margin-top: 10px;" class="fragment">User-Level State Analyzer</h4>
+					<ul>
+						<li class="fragment">Floating point calculations</li>
+						<li class="fragment">Longer control loops</li>
+					</ul>
+					<div class="banner fragment" style="margin-top: 50px; margin-left: 300px;">
+						opportunity for ML-based control loops
+					</div>
+				</section>
+
+				<section>
+					<h2>Other uses and limitations</h2>
+					<h4 style="margin-top: 90px;" class="fragment">Binding per path</h4>
+					<ul>
+						<li class="fragment">Aggregate congestion signals (e.g., ECN)</li>
+					</ul>
+					<h4 style="margin-top: 90px;" class="fragment">Binding per layers</h4>
+					<ul>
+						<li class="fragment">Per packet control level (e.g. TOS priority marking)</li>
+						<li class="fragment">Merge some functionalities of Network and Transport layers (e.g. Scout)</li>
+						<li class="fragment">Cooperation between the application and network layer (e.g. run consensus [3])</li>
+					</ul>
+					<h4 style="margin-top: 90px;" class="fragment">Limitations</h4>
+					<ul>
+						<li class="fragment">Memory access pattern</li>
+						<li class="fragment">Packet steering between the CPUs and NIC's rxqs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<ol>
+						<li><a href="https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/">NVIDIA Hopper Architecture In-Depth</a></li>
+						<li> Hu, Shuihai, et al. "Aeolus: A building block for proactive transport in datacenters." Proceedings of the Annual conference of the ACM Special Interest Group on Data Communication on the applications, technologies, architectures, and protocols for computer communication. 2020.</li>
+						<li> Zhou, Yang, et al. "Electrode: Accelerating Distributed Protocols with {eBPF}." 20th USENIX Symposium on Networked Systems Design and Implementation (NSDI 23). 2023.</li>
+					</ol>
+				</section>
+
+				
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<p style="color: white;" class="r-fit-text">Q&amp;A</p>
 				</section>
 			</div>
 
